@@ -25,6 +25,7 @@ using namespace std;
 int main()
 {
     int n;
+    //long long很重要，这是c++的招牌，大于100直接long long。
     long long f[91];
     //cin不会像scanf压缩数据导致溢出或者遇空格
     //中断，使数据后半部分残留在缓冲区，导致下一
