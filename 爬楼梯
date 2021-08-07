@@ -1,0 +1,35 @@
+Description
+小明是个非常无聊的人，他每天都会思考一些奇怪的问题，比如爬楼梯的时候，他就会想，如果每次可以上一级台阶或者两级台阶，那么上 n 级台阶一共有多少种方案？
+
+Input
+输入只有一行为一个正整数 n(1 ≤ n ≤ 50)。
+
+Output
+输出符合条件的方案数。
+注意：64-bit 整型请使用 long long 来定义，并且使用 %lld 或 cin、cout 来输入输出，请不要使用 __int64 和 %I64d。
+
+Sample
+Input 
+4
+Output 
+5
+
+
+//这种题还是要写数找规律，不能看题目的障眼法规律
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    long long f[51];
+    std::ios::sync_with_stdio(false);
+    while (scanf("%d",&n)!=EOF) {
+        f[1]=1;
+        f[2]=2;
+        for (int i=3;i<=n;i++) {
+            f[i]=f[i-1]+f[i-2];
+        }
+        cout<<f[n]<<endl;
+    }
+    return 0;
+}
