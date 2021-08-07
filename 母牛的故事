@@ -1,0 +1,36 @@
+母牛的故事
+Description
+有一对夫妇买了一头母牛，它从第2年起每年年初生一头小母牛。每头小母牛从第四个年头开始，每年年初也生一头小母牛。请编程实现在第n年的时候，共有多少头母牛？
+
+Input
+输入为一个整数n(0< n< 55)。
+
+Output
+输出在第n年的时候母牛的数量。
+
+Sample
+Input 
+5
+Output 
+6
+
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    long long f[56];
+    std::ios::sync_with_stdio(false);
+    while (cin>>n) {
+        f[1]=1;
+        f[2]=2;
+        f[3]=3;
+        f[4]=4;
+        for (int i=5;i<=n;i++) {
+            f[i]=f[i-1]+f[i-3];
+        }
+        cout<<f[n]<<endl;
+    }
+    return 0; 
+} 
