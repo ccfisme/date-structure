@@ -28,6 +28,7 @@ Output
 // 由此我们可以继续推出卒到 (n, m) 点的路径条数的递推式为: d[n][m] = d[n - 1][m] +d[n][m - 1].
 
 //本题思路先找出马的控制点并赋值为-1，接着用for循环从第一行开始，计算到达每个点的路径数目，计算公式为d[n][m] = d[n - 1][m] +d[n][m - 1].
+//详见https://bbs.huaweicloud.com/blogs/249766
 #include <iostream>
 using namespace std;
 long long ma[30][30]={0}, n, m, x, y;
@@ -44,7 +45,7 @@ int main()
 	y += 1;
 	n += 1;
 	m += 1;
-	//此时 A 点对应数组 ma[1][1];
+	//此时 A 点对应数组 ma[1][1]，因为所有的点的值都是由ma[1][1]=1带入递推公式得出的
 	ma[1][1] = 1;
 	//标记马的控制点;
 	for (int i = 0; i < 9; i++) {
