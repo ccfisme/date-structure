@@ -29,7 +29,6 @@ Output
 
 //本题思路先找出马的控制点并赋值为-1，接着用for循环从第一行开始，计算到达每个点的路径数目，计算公式为d[n][m] = d[n - 1][m] +d[n][m - 1].
 #include <iostream>
-#include <algorithm>
 using namespace std;
 long long ma[30][30]={0}, n, m, x, y;
 //马控制点相对于马所在位置的距离;
